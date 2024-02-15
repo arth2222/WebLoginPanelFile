@@ -12,7 +12,10 @@ namespace WebLoginPanelFile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string test = "hei#leander#agasøster";
 
+            string[] splitArray=test.Split('#');
+           
         }
 
         protected void ButtonLogin_Click(object sender, EventArgs e)
@@ -23,12 +26,13 @@ namespace WebLoginPanelFile
 
         protected void ButtonLagreMeny_Click(object sender, EventArgs e)
         {
-            string filePath=Path.GetFullPath("meny.txt");
+            //string filePath=Path.GetFullPath("meny.txt");
             string filePathAbs = Server.MapPath("meny.txt");
             //hente ut alle 5 verdier i tekstbokser
             string mandag = TextBox1.Text;
             string tirsdag = TextBox2.Text;
             string onsdag = TextBox3.Text;
+            //todo legg til de to andre dagene
 
             //sånn, alt er hentet, nå lagre. til feks en fil
             File.WriteAllText(filePathAbs, mandag+"#"+tirsdag+"#"+onsdag+"#");
